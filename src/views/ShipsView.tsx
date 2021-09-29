@@ -1,6 +1,7 @@
 import React, {FC, useEffect, useState} from "react";
 import SpaceXService from "../services/SpaceXService";
 import IShipData from "../types/IShipData";
+import { Link } from "react-router-dom";
 
 
 const ShipsView: FC = () => {
@@ -39,7 +40,7 @@ const ShipsView: FC = () => {
         <>
             <h1>Ships</h1>
             <ul>
-                {ships.map(ship=><li key={ship.id}>{ship.name}</li>)}
+                {ships.map(ship=><li key={ship.id}><Link  to={`/ships/${ship.id}`}>{ship.name}</Link></li>)}
             </ul>
         </>
     )
